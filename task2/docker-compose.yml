@@ -1,0 +1,11 @@
+version: '3'
+services:
+  nginx:
+    build: .
+    ports:
+      - "443:443"
+    volumes:
+      - ./html:/usr/share/nginx/html
+      - ./certs:/etc/ssl/certs
+      - ./conf:/etc/nginx/conf.d
+    restart: always
